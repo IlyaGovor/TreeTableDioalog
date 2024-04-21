@@ -1,0 +1,70 @@
+<core:FragmentDefinition
+  xmlns="sap.ui.table"
+  xmlns:m="sap.m"
+  xmlns:core="sap.ui.core">
+  <m:Dialog
+    id="treeTab"
+    title="Buckets"
+     >
+
+      <m:content>
+      
+ <TreeTable
+        id="treeTable"
+        selectionMode="MultiToggle"
+        enableColumnReordering="false"
+        rows="{
+            path : '/Nodes',
+            parameters : {
+               countMode: 'Inline',
+               treeAnnotationProperties : {
+                    hierarchyLevelFor : 'HierarchyLevel',
+                    hierarchyNodeFor : 'NodeID',
+                    hierarchyParentNodeFor : 'ParentNodeID',
+                    hierarchyDrillStateFor : 'DrillState'
+                }
+            }
+        }">
+ 
+ <columns>
+
+            <Column id="_IDGenColumn1">
+                <m:Label id="_IDGenLabel1" text="Description"/>
+                <template>
+                    <m:Text id="_IDGenText1" text="{Description}" wrapping="false" />
+                </template>
+            </Column>
+
+            <Column id="_IDGenColumn2">
+                <m:Label id="_IDGenLabel2" text="HierarchyLevel"/>
+                <template>
+                    <m:Text id="_IDGenText2" text="{HierarchyLevel}" wrapping="false" />
+                </template>
+            </Column>
+
+            <Column id="_IDGenColumn3">
+                <m:Label id="_IDGenLabel3" text="NodeID"/>
+                <template>
+                    <m:Text id="_IDGenText3" text="{NodeID}" wrapping="false" />
+                </template>
+            </Column>
+
+            <Column id="_IDGenColumn4">
+                <m:Label id="_IDGenLabel4" text="ParentNodeID"/>
+                <template>
+                    <m:Text id="_IDGenText4" text="{ParentNodeID}" wrapping="false" />
+                </template>
+            </Column>
+
+        </columns>
+        
+    </TreeTable>
+   </m:content>
+      <m:beginButton>
+        <m:Button id="_IDGenButton2" text="OK" press=".onOkDialog" />
+     </m:beginButton>
+      <m:endButton>
+       <m:Button id="_IDGenButton1" text="Close" press=".onCloseDialog" />
+   </m:endButton>
+  </m:Dialog>
+</core:FragmentDefinition>
